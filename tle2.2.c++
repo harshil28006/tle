@@ -2,37 +2,30 @@
 //#include<iostream>
 using namespace std;
 
+int msb(int n ){
+    for(int i = 32 ; i > 0 ; i-- ){
+        if(n & (1LL << i)){
+            return i;
+        }
+    }
+    return 0;
+}
+
 int main(){
-    //bit manupulation
-
-    //bit masking
-    int n;
-    cin >> n;
-    int a[n];
-    for(int i = 0 ; i < n; i ++){
-        cin >> a[i];
-    }
-    
-    for(int i = 0 ; i < (1 << n); i++ ){
-        for(int j = 0 ; j < n ;j++){
-             if( i >> j & 1){
-                cout << a[j] << " ";
-                cout << endl ; 
-             }
+    int c = 14;
+    //cin >> c;
+    int a = 0 , b = 0;
+    int bits = msb(c);
+    bool flag = false;
+    a += 1 << bits;
+    for(int i = 0 ; i < bits ; i++){
+        if(c & (1LL << i))/*to check wether the bit is significant or not*/{
+            b += (1LL << i);
+        }else{
+            a += (1LL << i);
+            b += (1LL << i);
         }
     }
-
-    //how to get exact complement
-    while(true){
-        int n ; cin >> n;
-
-        int l = 0;
     
-    
-        while(n >> l){
-            l++;
-        }
-        
-        cout << ((~n) & ((1 << l) - 1));
-    }
+    cout << a*b << endl;
 }
