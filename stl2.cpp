@@ -16,7 +16,5 @@ int main(){
     cout << max_element(v.begin() , v.end()) ;
     // the above line will give the value of max element and if we want the position of that element then
     cout << max_element(v.begin() , v.end()) - v.begin() ;
-
-
-    
+  
 }
