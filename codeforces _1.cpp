@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 //#include<iostream>
+#include<cmath>
 using namespace std;
 
 int collatz(int k , int x){
@@ -9,22 +10,32 @@ int collatz(int k , int x){
                x=2*x;
                return x; 
        }
-      
-       for(int i = 1 ; i<=k ; i++){
+             
+       x = x*pow(2,k);
+       return x;
 
-             x = x*2;
-             return x;
-       }
 }
 
-int main(){
-
-      int k;
+void solve()
+{
+        int k;
       int x;
       cin >> k ;
       cout << "\n";
       cin >> x ;
       cout << "\n";
       int m = collatz(k,x);
-      cout << m << endl;
+      cout << m;
+}
+
+int main(){
+
+    int t;
+    cin>>t;
+
+    while(t--)
+    {
+        solve();
+    }
+
 }

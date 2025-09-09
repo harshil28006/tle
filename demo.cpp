@@ -14,16 +14,18 @@ void solve()
         cin>>arr[i];
     }
 
-    vector<int> q(n);
-    for(int i=0;i<n;i++)
+    if(n==2)
     {
-        q[i]=n-arr[i]-1;
+        
     }
+    vector<int> q=arr;
+    reverse(q.begin(),q.end());
 
     for(int i=0;i<n;i++)
     {
         cout<<q[i]<<" ";
     }
+
     cout<<endl;
 
 }
