@@ -16,7 +16,7 @@ void f(int i , int n , vector<int> &v , ll sm, int target , vector<int> res){
     res.push_back(v[i]);
     if(sm + v[i] <= target){    
         f(i , n , v ,sm + v[i] , target , res);
-    }
+    }  
 }
 
 vector<vector<int>> combinationsum(vector<int> &candidates , int target){

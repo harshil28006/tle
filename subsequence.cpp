@@ -65,27 +65,22 @@ int Path(int i , int j , int n ,int m , vector<vector<int>> &arr){
 //rat in a maze problem
 
 bool isvalid(int i , int j , int n , int m , vector<vector<int>> &arr){
-    if(i>= 0&& j>= 0 && i < n && j < m && arr[i][j] == 0){
+    if(i>= 0 && j>= 0 && i < n && j < m && arr[i][j] == 0){
         return true;
     }
     return false;
 }
 
 int rat(int i , int j , int n , int m , vector<vector<int>> &arr ,string &path){
-    int di = {0, 1 , 0, -1};
-    int dj = {1, 0 , -1, 0};
+    int di[] = {0, 1 , 0, -1};
+    int dj[] = {1, 0 , -1, 0};
     string dir = "RDLU";
 
     if(i == n-1 && j == m -1){
         cout << path << endl;
         return;
     }
-    
-    int di[] = {0, 1 , 0, -1};
-    int dj[] = {1, 0 , -1, 0};
-    string dir = "RDLU";
-    
-    
+
 
     arr[i][j] = 1;
     for(int a = 0 ; a < 4 ; a++){
